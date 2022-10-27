@@ -1,0 +1,31 @@
+﻿<Window x:Class="WpfApp3.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp3"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800" WindowStartupLocation="CenterScreen">
+    <Grid>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="22"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="16*"/>
+        </Grid.RowDefinitions>
+        
+        <Menu>
+            <MenuItem Header="File">
+                <MenuItem Header="Open"/>
+                <MenuItem Header="Save"/>
+                <Separator/>
+                <MenuItem Header="Auto Save"/>
+            </MenuItem>
+            <MenuItem Header="Additional settings">
+                <MenuItem Header="Show file path"/>
+                <MenuItem Header="Hide file path"/>
+            </MenuItem>
+        </Menu>
+
+    </Grid>
+</Window>
