@@ -13,19 +13,142 @@
             <RowDefinition Height="2*"/>
             <RowDefinition Height="16*"/>
         </Grid.RowDefinitions>
-        
+
         <Menu>
             <MenuItem Header="File">
-                <MenuItem Header="Open"/>
-                <MenuItem Header="Save"/>
+                <MenuItem Header="Open" Click="openFileClick"/>
+                <MenuItem Header="Save" Click="saveFileClick"/>
                 <Separator/>
-                <MenuItem Header="Auto Save"/>
+                <MenuItem Header="Auto Save"
+                          Click="autoSaveClicked"
+                          Name="autoSave"/>
             </MenuItem>
             <MenuItem Header="Additional settings">
-                <MenuItem Header="Show file path"/>
-                <MenuItem Header="Hide file path"/>
+                <MenuItem Header="Show file path"
+                          Click="fielPathClick"
+                          Name="filePath"/>
             </MenuItem>
         </Menu>
+
+        <WrapPanel
+            Height="30"
+            Grid.Row="1"
+            Background="Bisque"
+            >
+
+            <Button
+                Content="B"
+                FontWeight="Bold"
+                Click="fontStyleClicked"
+                Tag="Bold"
+                />
+
+            <Button
+                Content="I"
+                FontStyle="Oblique"
+                Click="fontStyleClicked"
+                Tag="Italic"
+                />
+
+            <Button
+                Click="fontStyleClicked"
+                Tag="Under"
+                >
+                <TextBlock TextDecorations="Underline" >
+                    U
+                </TextBlock>
+            </Button>
+
+            
+
+            <ComboBox
+                Width="100"
+                Name="fontsCB"
+                SelectionChanged="fontsCBselectionChanged"
+                />
+
+            <ComboBox
+                Width="43"
+                Name="sizeCB"
+                SelectionChanged="sizeCBselectionChanged"
+                />
+
+
+            
+            <ComboBox
+                Width="80"
+                Name="colorCB"
+                SelectionChanged="colorCBselectionChanged"
+                />
+
+
+            
+            <Button
+                Tag="left"
+                Click="AlignClick">
+                <Button.Background>
+                    <ImageBrush ImageSource="Images/icons8-align-left-24.png"/>
+                </Button.Background>
+            </Button>
+
+            <Button
+                Tag="center"
+                Click="AlignClick">
+                <Button.Background>
+                    <ImageBrush ImageSource="Images/icons8-align-center-24.png"/>
+                </Button.Background>
+            </Button>
+
+            <Button
+                Tag="right"
+                Click="AlignClick">
+                <Button.Background>
+                    <ImageBrush ImageSource="Images/icons8-align-right-24.png"/>
+                </Button.Background>
+            </Button>
+
+            <Button
+                Tag="justify"
+                Click="AlignClick">
+                <Button.Background>
+                    <ImageBrush ImageSource="Images/icons8-align-justify-24.png"/>
+                </Button.Background>
+            </Button>
+
+
+
+            <Button ToolTip="Cut" Click="paramClick">
+                <Button.Background>
+                    <ImageBrush ImageSource="Images/icons8-cut-24.png"/>
+                </Button.Background>
+            </Button>
+
+            <Button ToolTip="Copy" Click="paramClick">
+                <Button.Background>
+                    <ImageBrush ImageSource="Images/icons8-copy-24.png"/>
+                </Button.Background>
+            </Button>
+
+            <Button ToolTip="Paste" Click="paramClick">
+                <Button.Background>
+                    <ImageBrush ImageSource="Images/icons8-paste-24.png"/>
+                </Button.Background>
+            </Button>
+
+            <Button ToolTip="Select All" Click="paramClick">
+                <Button.Background>
+                    <ImageBrush ImageSource="Images/icons8-select-all-24.png"/>
+                </Button.Background>
+            </Button>
+
+        </WrapPanel>
+
+        <RichTextBox
+            Grid.Row="2"
+            Name="txtBox"
+            TextChanged="txtBoxTextChanged"
+            />
+
 
     </Grid>
 </Window>
